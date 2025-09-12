@@ -17,7 +17,7 @@ function runA1() {
 
     // TODO(b): Prototype chain — link Rectangle.prototype -> Shape.prototype
     //          and restore Rectangle.prototype.constructor.
-    Rectangle.prototype = new Object(Shape.prototype);
+    Rectangle.prototype = Object.create(Shape.prototype);
     Rectangle.prototype.constructor = Rectangle;
 
     // TODO(c): Override getArea() on Rectangle.prototype to return width*height.
@@ -29,7 +29,7 @@ function runA1() {
     //          describe via Shape.prototype.describe.call(this) and append
     //          " Rectangle WxH".
     Rectangle.prototype.describe = function(){ 
-        Shape.prototype.describe.call(this) + ` Rectangle ${this.width}x${this.height}` };
+        return Shape.prototype.describe.call(this) + ` Rectangle ${this.width}x${this.height}` };
 
     // 3) Square
     // TODO(e): Square(side) should call Rectangle with width=height=side.
@@ -39,7 +39,7 @@ function runA1() {
 
     // TODO(f): Prototype chain — link Square.prototype -> Rectangle.prototype
     //          and restore Square.prototype.constructor.
-    Square.prototype = new Object(Rectangle.prototype);
+    Square.prototype = Object.create(Rectangle.prototype);
     Square.prototype.constructor = Square;
 
     // TODO(g): Override describe() on Square.prototype. Call the parent
