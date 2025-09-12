@@ -33,16 +33,20 @@ function runA1() {
 
     // 3) Square
     // TODO(e): Square(side) should call Rectangle with width=height=side.
-    function Square(side) { /* TODO */ }
+    function Square(side) { 
+        Rectangle.call(this, side, side);
+     }
 
     // TODO(f): Prototype chain — link Square.prototype -> Rectangle.prototype
     //          and restore Square.prototype.constructor.
-    // Square.prototype = ...
-    // Square.prototype.constructor = ...
+    Square.prototype = new Object(Rectangle.prototype);
+    Square.prototype.constructor = Square;
 
     // TODO(g): Override describe() on Square.prototype. Call the parent
     //          (Rectangle) describe and append " Square side=S".
-    // Square.prototype.describe = function(){ /* TODO */ };
+    Square.prototype.describe = function(){
+        return Rectangle.prototype.describe.call(this) + ` Square side=${this.width}`;
+    };
 
     // ─────────────────────────────────────────────────────────────────────
     // Self-checks (leave these as-is; adjust only when implementing)
