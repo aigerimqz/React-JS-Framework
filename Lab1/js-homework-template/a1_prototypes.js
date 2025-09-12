@@ -28,7 +28,8 @@ function runA1() {
     // TODO(d): Override describe() on Rectangle.prototype. Call the parent
     //          describe via Shape.prototype.describe.call(this) and append
     //          " Rectangle WxH".
-    // Rectangle.prototype.describe = function(){ /* TODO */ };
+    Rectangle.prototype.describe = function(){ 
+        Shape.prototype.describe.call(this) + ` Rectangle ${this.width}x${this.height}` };
 
     // 3) Square
     // TODO(e): Square(side) should call Rectangle with width=height=side.
