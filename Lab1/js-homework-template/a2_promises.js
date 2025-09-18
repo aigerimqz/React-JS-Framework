@@ -56,9 +56,13 @@ function runSequential() {
             if(orders.length === 0){
                 throw new Error("No orders");
             }
+            return getRecsP(user.id).then(recommendations => ({
+                user,
+                orders,
+                recommendations
+            }))
 
-
-            throw new Error("TODO: add business-rule check & continue chain");
+            // throw new Error("TODO: add business-rule check & continue chain");
         })
         .then(({ user, orders, recommendations }) => {
             console.log("final (sequential):", { user, orders, recommendations });
