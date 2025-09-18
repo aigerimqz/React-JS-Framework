@@ -26,13 +26,17 @@ function promisify(fn) {
         fn(...args, (err, data) => err ? reject(err) : resolve(data));
       });
     };
+    
 }
 
 
+
+
 // TODO: create wrappers using promisify
-const getUserP   = /* TODO */ null;
-const getOrdersP = /* TODO */ null;
-const getRecsP   = /* TODO */ null;
+const getUserP   =  promisify(getUserCB);/* TODO */ ;
+const getOrdersP = promisify(getOrdersCB); /* TODO */ ;
+const getRecsP   = promisify(getRecsCB); /* TODO */;
+
 
 /* ──────────────────────────────────────────────────────────────────────────
    - After fetching user and orders, INSERT a step that rejects with
@@ -49,6 +53,10 @@ function runSequential() {
         })
         .then(({ user, orders }) => {
             // TODO: business-rule failure here
+            if(orders.length === 0){
+                throw new Error("No orders");
+            }
+
 
             throw new Error("TODO: add business-rule check & continue chain");
         })
