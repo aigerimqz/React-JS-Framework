@@ -110,6 +110,7 @@ function runRaceOptional() {
     const p1 = new Promise(res => setTimeout(() => res("p1"), 120));
     const p2 = new Promise(res => setTimeout(() => res("p2"), 60));
     // TODO:practice  Promise.race return then (winner as console.log("race winner:", winner));
+    return Promise.race([p1, p2]).then((winner => console.log("race winner:", winner)));
     console.log("TODO: implement Promise.race");
 }
 
