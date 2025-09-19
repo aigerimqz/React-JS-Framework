@@ -46,7 +46,10 @@ function runA3(){
     // Schedule a microtask via Promise.then:
     //   Inside that microtask, also enqueue ANOTHER microtask that logs "5 microtask: nested"
     // TODO:
-   
+    Promise.resolve().then(() => {
+    log("3 microtask: promise.then");
+    queueMicrotask(() => log("5 microtask: nested"));
+    });
 
     
 
