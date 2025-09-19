@@ -57,6 +57,7 @@ function runA3(){
 
     // Schedule a queueMicrotask that logs "4 microtask: queueMicrotask"
     // TODO:
+    queueMicrotask(() => log("4 microtask: queueMicrotask"));
     
     // End of synchronous section:
     log("2 sync end");
