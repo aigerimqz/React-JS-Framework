@@ -86,7 +86,7 @@ function runParallel() {
     return getUserP(2)
         .then(user => {
             // TODO: run both in parallel using Promise.all and then log result
-            return Promise.all([getRecsP(user.id), getOrdersP(user.id)]).then(([orders, recommendations]) => ({
+            return Promise.all([getOrdersP(user.id), getRecsP(user.id)]).then(([orders, recommendations]) => ({
                 user,
                 orders,
                 recommendations
