@@ -36,17 +36,25 @@ function runA3(){
     // Start with the first sync log:
     log("1 sync start");
 
+   
     // Schedule a macrotask (should be LAST overall):
     // TODO: set a timeout that logs "6 timeout"
+
+     setTimeout(() =>
+        log("6 timeout"), 0);
 
     // Schedule a microtask via Promise.then:
     //   Inside that microtask, also enqueue ANOTHER microtask that logs "5 microtask: nested"
     // TODO:
+   
+
+    
+
 
 
     // Schedule a queueMicrotask that logs "4 microtask: queueMicrotask"
     // TODO:
-
+    
     // End of synchronous section:
     log("2 sync end");
     // ─────────────────────────────────────────────────────────────

@@ -91,7 +91,7 @@ function runParallel() {
                 orders,
                 recommendations
             }));
-            throw new Error("TODO: implement Promise.all fan-out");
+            // throw new Error("TODO: implement Promise.all fan-out");
         })
         .then(({ user, orders, recommendations }) => {
             console.log("final (parallel):", { user, orders, recommendations });
