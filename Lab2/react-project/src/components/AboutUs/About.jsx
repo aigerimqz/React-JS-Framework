@@ -13,10 +13,10 @@ export default function About(){
     </div>
     <div className="contact__section">
         <li>
-            <a href="https:/instagram.com"><img src={instaIcon} alt="instagram" /></a>
-            <a href="https:/www."><img src={facebookIcon} alt="facebook" /></a>
-            <a href=""><img src={telegramIcon} alt="telegram" /></a>
-            <a href=""><img src={tiktokIcon} alt="tiktok" /></a>
+            <a className="contact__item" href="https:/instagram.com"><img src={instaIcon} alt="instagram" /></a>
+            <a className="contact__item" href="https:/www."><img src={facebookIcon} alt="facebook" /></a>
+            <a className="contact__item" href=""><img src={telegramIcon} alt="telegram" /></a>
+            <a className="contact__item" href=""><img src={tiktokIcon} alt="tiktok" /></a>
         </li>
         
         
