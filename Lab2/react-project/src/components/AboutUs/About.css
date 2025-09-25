@@ -1,0 +1,21 @@
+*{
+    color: white;
+}
+.about__section{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about__title{
+    font-size: 56px;
+    text-align: center;
+    font-weight: 400;
+    
+}
+
+.about__text{
+    font-size: 16px;
+    margin: 0 50px;
+}
