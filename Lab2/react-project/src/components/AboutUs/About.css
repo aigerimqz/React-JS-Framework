@@ -43,3 +43,9 @@
     transform: scale(1.1);
 
 }
+.contact__line{
+    width: 200px;
+    margin: 0 30px;
+    border-radius: 20px;
+    border: solid 1px white;
+}
