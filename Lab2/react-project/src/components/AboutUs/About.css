@@ -19,6 +19,14 @@
     font-size: 16px;
     margin: 0 50px;
     width: 70%;
+    text-align: justify;
+    font-weight: 200;
+}
+.info__title{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 100px;
+    margin-bottom: 70px;
 }
 .info__section{
     display: flex;
@@ -44,6 +52,7 @@
     /* width: 200px; */
     font-size: 12px;
     text-align: justify;
+    font-weight: 200;
 }
 .info__text a{
     text-decoration: none;
@@ -53,14 +62,14 @@
     display: flex;
     
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 50px auto;
 }
 .contact__section li{
     list-style: none;
 }
 .contact__item{
-    margin: 0 10px;
+    margin: 0 15px;
     
 }
 .contact__item img{
@@ -73,8 +82,10 @@
 
 }
 .contact__line{
-    width: 200px;
+    width: 320px;
     margin: 0 30px;
-    border-radius: 20px;
-    border: solid 1px white;
+    
+    border: none;
+    height: 0.1px;
+    background: rgba(255, 255, 255, 0.623);
 }
