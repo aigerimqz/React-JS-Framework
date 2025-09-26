@@ -10,13 +10,14 @@
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.5); 
     background-blend-mode: multiply; 
-    max-height: 80vh;
+    min-height: 100vh;
 }
 
 .header__section{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
   /* border-bottom: 1px solid white; */
   
 }
@@ -27,4 +28,5 @@
   font-size: 24px;
   margin: 0 10px;
   text-decoration: none;
+  color: white;
 }
