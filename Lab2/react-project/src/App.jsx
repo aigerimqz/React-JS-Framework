@@ -11,8 +11,8 @@ function App() {
           <div className="header__section">
             <h1 className="header__title">WebSite</h1>
             <div className="header__navigation">
-              <a href="#">About Us</a>
               <a href="#">Home</a>
+              <a href="#">About</a>
               <a href="#">Blog</a>
             </div>
           </div>

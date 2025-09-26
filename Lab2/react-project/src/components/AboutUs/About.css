@@ -40,6 +40,9 @@
     font-weight: 500;
     
 }
+.about__text a:hover{
+    color: #2cc295;
+}
 .contact__section{
     display: flex;
     color: #373737;
@@ -52,6 +55,7 @@
 }
 .contact__item{
     margin: 0 15px;
+    cursor: pointer;
     
 }
 .contact__item img{
