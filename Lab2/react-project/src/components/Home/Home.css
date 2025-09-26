@@ -1,0 +1,25 @@
+*{
+    color: white;
+}
+.home__section{
+    margin: 150px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.home__title{
+    font-size: 56px;
+    text-align: center;
+    /* font-weight: 400; */
+    
+}
+
+.home__text{
+    font-size: 16px;
+    margin-left: 100px;
+    width: 70%;
+    text-align: justify;
+    font-weight: 200;
+}

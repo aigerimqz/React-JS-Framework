@@ -10,14 +10,7 @@ export default function About(){
     return (
     <>
     
-    <div className="about__section">
- 
-        <h1 className="about__title">Enjoy your best travel ever</h1>
-        <p className="about__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quibusdam molestias ipsam nesciunt laborum eum, vel blanditiis fuga saepe modi, pariatur mollitia cum? Eos dolor beatae aliquid incidunt recusandae excepturi!</p>
-    
-    
-        
-    </div>
+   
 
     <div className="contact__section">
         <hr className="contact__line"/>
@@ -33,29 +26,29 @@ export default function About(){
 
 
 
-    <h1 className="info__title">About Us</h1>
+    <h1 className="about__title">About Us</h1>
 
-    <div className="info__section">
+    <div className="about__section">
         
-        <div className="info__item">
+        <div className="about__item">
             <img src={locationIcon} alt="" />
-            <div className="info__text">
+            <div className="about__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error sed esse quibusdam</p>
                 <a href="">More detailed →</a>
             </div>
             
         </div>
-        <div className="info__item">
+        <div className="about__item">
             <img src={bookingIcon} alt="" />
-            <div className="info__text">
+            <div className="about__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error sed esse quibusdam</p>
                 <a href="">More detailed →</a>
             </div>
             
         </div>
-        <div className="info__item">
+        <div className="about__item">
             <img src={serviceIcon} alt="" />
-            <div className="info__text">
+            <div className="about__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error sed esse quibusdam</p>
                 <a href="">More detailed →</a>
             </div>
