@@ -3,12 +3,18 @@ import "./TourItem.css";
 
 
 
-export default function TourItem({tourName, photoUrl}){
+export default function TourItem({tour}){
   return (
-    <div>
-      <h1>{tourName}</h1>
-      <img src={photoUrl} alt="" />
+    <div className="tour-card">
+        
+      <img src={tour.photo} alt={tour.name} className="tour-image" />
+      <div className="tour-content">
+        <h2 className="tour-title">{tour.name}</h2>
+        <p className="tour-country">{tour.country}</p>
+        <p className="tour-description">{tour.description}</p>
+        <p className="tour-price">{tour.price.toLocaleString()} ₸</p>
+      </div>
     </div>
-  )
+  );
 
 }

@@ -1,13 +1,18 @@
-.tour__list{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.tour__list {
+  text-align: center;
 }
 .tour__title{
     font-size: 36px;
-    text-align: center;
 }
+
+.tour__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+
 .loadBtn{
     padding: 20px 30px;
     border-radius: 30px;

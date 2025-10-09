@@ -20,10 +20,10 @@ export default function TourList(){
       <button className="loadBtn" onClick={load}>Load tours</button>
       
       {items ? 
-        <ul>
+        <ul className="tour__items">
         {items.map((item) => (
           // <li key={item.id}>{item.name}</li>
-          <TourItem key={item.id} tourName = {item.name}></TourItem>
+          <TourItem key={item.id} tour = {item}></TourItem>
         ))}
         </ul>
       : <p>None</p>}
