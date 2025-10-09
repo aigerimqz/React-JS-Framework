@@ -15,10 +15,10 @@ export default function TourList(){
     setItems(data);
   }
   return (
-    <div>
-      <h2>Show tours</h2>
-      <button onClick={load}>Load tours</button>
-      <p>Data: {items?.length || "none"}</p>
+    <div className="tour__list">
+      <h2 className="tour__title">Show tours</h2>
+      <button className="loadBtn" onClick={load}>Load tours</button>
+      
       {items ? 
         <ul>
         {items.map((item) => (

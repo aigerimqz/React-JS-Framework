@@ -1,0 +1,24 @@
+.tour__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tour__title{
+    font-size: 36px;
+    text-align: center;
+}
+.loadBtn{
+    padding: 20px 30px;
+    border-radius: 30px;
+    border:none;
+    font-size: 21px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;  
+    background-color: rgb(162, 224, 206);
+    transition: transform ease-in-out 0.3s;
+}
+.loadBtn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import About from "./components/AboutUs/About";
 import Home from "./components/Home/Home";
+import TourList from "./components/Tours/TourList";
 import "./App.css";
 
 function App() {
@@ -21,8 +22,12 @@ function App() {
       </div>
       <div className="container">
         <About></About>
+        <TourList></TourList>
       </div>
+      
+
     </>
+
   );
 }
 
