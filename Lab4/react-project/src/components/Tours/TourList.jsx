@@ -5,7 +5,7 @@ import "./TourList.css";
 
 export default function TourList(){
   const [items, setItems] = useState([]);
-
+  const [filterQuery, setFilterQuery] = useState("");
   async function load() {
     const result = await fetch(
       "http://127.0.0.1:8000/api/tours/"
@@ -14,6 +14,12 @@ export default function TourList(){
     console.log(data, "fetched data");
     setItems(data);
   }
+
+  const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(filterQuery.toLowerCase())
+  );
+
+
   return (
     <div className="tour__list">
       <h2 className="tour__title">Show tours</h2>
