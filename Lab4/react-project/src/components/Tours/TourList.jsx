@@ -24,7 +24,11 @@ export default function TourList(){
     <div className="tour__list">
       <h2 className="tour__title">Show tours</h2>
       <button className="loadBtn" onClick={load}>Load tours</button>
-      
+      <div className="search__bar">
+        <input className="search__input" type="text" placeholder="Search tours..." value={filterQuery} onChange={(e) => setFilterQuery(e.target.value)}/>
+        <button className="clear__btn" onClick={() => setFilterQuery("")}>Clear</button>
+
+      </div>
       {items ? 
         <ul className="tour__items">
         {items.map((item) => (
