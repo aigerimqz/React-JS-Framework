@@ -27,16 +27,27 @@ export default function TourList(){
       <div className="search__bar">
         <input className="search__input" type="text" placeholder="Search tours..." value={filterQuery} onChange={(e) => setFilterQuery(e.target.value)}/>
         <button className="clear__btn" onClick={() => setFilterQuery("")}>Clear</button>
-
+        
+        
+        
+        {filteredItems.length ? 
+        <ul className="tour__items">
+        {filteredItems.map((item) => (
+          // <li key={item.id}>{item.name}</li>
+          <TourItem key={item.id} tour = {item}></TourItem>
+        ))}
+        </ul>
+      : <p>No matching tours</p>}
       </div>
-      {items ? 
+
+      {/* {items ? 
         <ul className="tour__items">
         {items.map((item) => (
           // <li key={item.id}>{item.name}</li>
           <TourItem key={item.id} tour = {item}></TourItem>
         ))}
         </ul>
-      : <p>None</p>}
+      : <p>None</p>} */}
       
     </div>
   )
