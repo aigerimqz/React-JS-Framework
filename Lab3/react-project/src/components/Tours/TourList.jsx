@@ -12,7 +12,6 @@ export default function TourList() {
     console.log(data, "fetched data");
     setItems(data);
   }
-
   const filteredItems = items.filter((item) =>
     item.name.toLowerCase().includes(filterQuery.toLowerCase())
   );
