@@ -6,6 +6,8 @@ import "./TourList.css";
 export default function TourList(){
   const [items, setItems] = useState([]);
   const [filterQuery, setFilterQuery] = useState("");
+  const [loading, setLoading] = useState(false);
+
   async function load() {
     const result = await fetch(
       "http://127.0.0.1:8000/api/tours/"
