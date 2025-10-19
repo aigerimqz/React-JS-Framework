@@ -9,12 +9,14 @@ export default function TourList(){
   const [loading, setLoading] = useState(false);
 
   async function load() {
+    setLoading(true);
     const result = await fetch(
       "http://127.0.0.1:8000/api/tours/"
     );
     const data = await result.json();
     console.log(data, "fetched data");
     setItems(data);
+    setLoading(false);
   }
 
   useEffect( () => {
