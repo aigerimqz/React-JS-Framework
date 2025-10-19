@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TourItem from "./TourItem";
 import "./TourList.css";
 
@@ -15,6 +15,10 @@ export default function TourList(){
     setItems(data);
   }
 
+  useEffect( () => {
+    load();
+  }, []);
+
   const filteredItems = items.filter((item) =>
     item.name.toLowerCase().includes(filterQuery.toLowerCase())
   );
@@ -23,7 +27,7 @@ export default function TourList(){
   return (
     <div className="tour__list">
       <h2 className="tour__title">Show tours</h2>
-      <button className="loadBtn" onClick={load}>Load tours</button>
+      <button className="loadBtn" onClick={load}>Reload tours</button>
       <div className="search__bar">
         <input className="search__input" 
         type="text" 
