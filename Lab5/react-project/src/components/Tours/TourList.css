@@ -1,5 +1,7 @@
 .tour__list {
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 .tour__title{
     font-size: 36px;
@@ -69,4 +71,10 @@
     margin-top: 30px;
 }
 
+.loading{
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
 
+}
