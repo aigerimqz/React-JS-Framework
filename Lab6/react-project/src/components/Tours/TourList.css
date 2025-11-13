@@ -1,0 +1,80 @@
+.tour__list {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.tour__title{
+    font-size: 36px;
+}
+
+.tour__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.loadBtn{
+    padding: 20px 30px;
+    border-radius: 30px;
+    border:none;
+    font-size: 21px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;  
+    background-color: rgb(162, 224, 206);
+    transition: transform ease-in-out 0.3s;
+}
+.loadBtn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+
+.search__bar{
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+}
+.search__input{
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: solid 1px rgb(132, 132, 132);
+    margin: 0 20px;
+    width: 300px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+
+}
+
+.clear__btn{
+    padding: 15px;
+    border-radius: 30px;
+    border: solid 1px #e73c3c ;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    background: none;
+    color: #e73c3c;
+    transition: ease-in 0.2s;
+
+}
+.clear__btn:hover{
+    background-color: #e73c3c;
+    color: white;
+    cursor: pointer;
+}
+
+.tour__items{
+    margin-top: 30px;
+}
+
+.loading{
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+
+}
