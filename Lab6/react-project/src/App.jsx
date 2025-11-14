@@ -5,6 +5,7 @@ import TourList from "./pages/Tours/TourList";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
+import TourDetail from "./pages/Tours/TourDetail";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route index element = {<Home/>}/>
           <Route path="about" element={<About/>}/>
           <Route path="tours" element={<TourList/>}/>
+          <Route path="tours/:id" element={<TourDetail/>}/>
           {/* <Route path="login" element={<Login/>}/> */}
         </Route>
       </Routes>
