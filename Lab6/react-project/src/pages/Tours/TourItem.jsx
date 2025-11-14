@@ -7,10 +7,10 @@ export default function TourItem({tour}){
   return (
     <div className="tour-card">
         
-      <img src={tour.photo} alt={tour.name} className="tour-image" />
+      <img src={tour.thumbnail} alt={tour.name} className="tour-image" />
       <div className="tour-content">
-        <h2 className="tour-title">{tour.name}</h2>
-        <p className="tour-country">{tour.country}</p>
+        <h2 className="tour-title">{tour.title}</h2>
+        <p className="tour-country">{tour.brand}</p>
         <p className="tour-description">{tour.description}</p>
         <p className="tour-price">{tour.price.toLocaleString()} ₸</p>
       </div>

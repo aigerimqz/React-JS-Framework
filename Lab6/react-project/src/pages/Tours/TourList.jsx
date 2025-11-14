@@ -3,18 +3,21 @@ import TourItem from "./TourItem";
 import "./TourList.css";
 export default function TourList() {
     const [items, setItems] = useState([]);
+    
     const [filterQuery, setFilterQuery] = useState("");
     const [loading, setLoading] = useState(false);
     async function load(query = "") {
         setLoading(true);
-        let url = "https://react-project-jbmu.onrender.com/api/tours/";
-        if(query) {
-            url += `?search=${query}`;
+        let url = "https://dummyjson.com/products";
+
+        if (query) {
+          url = `https://dummyjson.com/products/search?q=${query}`;
         }
+
         const result = await fetch(url);
         const data = await result.json();
         console.log(data, "fetched data");
-        setItems(data);
+        setItems(data.products || []);
         setLoading(false);
     }
 
