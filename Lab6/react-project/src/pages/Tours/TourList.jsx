@@ -1,36 +1,39 @@
 import { useState, useEffect } from "react";
 import TourItem from "./TourItem";
 import "./TourList.css";
+import { searchItems } from "../../services/itemService";
 export default function TourList() {
     const [items, setItems] = useState([]);
-    
+    const [params, setParams] = useSearchParams();
+    const q = params.get("q") || "";
     const [filterQuery, setFilterQuery] = useState("");
     const [loading, setLoading] = useState(false);
     async function load(query = "") {
         setLoading(true);
-        let url = "https://dummyjson.com/products";
+        let data;
 
         if (query) {
-          url = `https://dummyjson.com/products/search?q=${query}`;
+          data = await searchItems(query);
+        }else{
+          const res = await fetch("https://dummyjson.com/products");
+          data = await res.json();
         }
 
-        const result = await fetch(url);
-        const data = await result.json();
-        console.log(data, "fetched data");
+        
         setItems(data.products || []);
         setLoading(false);
     }
 
     useEffect(() => {
-        load();
-    }, []);
+        load(q);
+    }, [q]);
 
-    useEffect(() => {
-        const delayDebounce = setTimeout(() => {
-            load(filterQuery);
-        }, 400);
-        return () => clearTimeout(delayDebounce);
-    }, [filterQuery]);
+    // useEffect(() => {
+    //     const delayDebounce = setTimeout(() => {
+    //         load(filterQuery);
+    //     }, 400);
+    //     return () => clearTimeout(delayDebounce);
+    // }, [filterQuery]);
     // const filteredItems = items.filter((item) =>
     //     item.name.toLowerCase().includes(filterQuery.toLowerCase())
     // );
