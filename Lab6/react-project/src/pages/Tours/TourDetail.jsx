@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getItemById } from "../../services/itemService";
-
+import "../Tours/TourDetail.css";
 export default function TourDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -18,15 +18,15 @@ export default function TourDetail() {
   if (!tour) return <p>Tour not found</p>;
 
   return (
-    <div className="tour-details">
-      <h2>{tour.title}</h2>
-      <img src={tour.thumbnail} alt={tour.title} width={300} />
-      <p>Brand: {tour.brand}</p>
-      <p>Category: {tour.category}</p>
-      <p>Price: {tour.price.toLocaleString()} ₸</p>
-      <p>Rating: {tour.rating}</p>
-      <p>Description: {tour.description}</p>
-      <button onClick={() => navigate(-1)}>Back</button>
+    <div className="tour__details">
+      <h2 className="tour__title">{tour.title}</h2>
+      <img className="tour__img" src={tour.thumbnail} alt={tour.title} width={300} />
+      <p className="tour__info">Brand: {tour.brand}</p>
+      <p className="tour__info">Category: {tour.category}</p>
+      <p className="tour__info">Price: {tour.price.toLocaleString()} $</p>
+      <p className="tour__info">Rating: {tour.rating}</p>
+      <p className="tour__info">Description: {tour.description}</p>
+      <button className="tour__btn" onClick={() => navigate(-1)}>Back</button>
     </div>
   );
 }

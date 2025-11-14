@@ -6,6 +6,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./layouts/Navbar";
 import TourDetail from "./pages/Tours/TourDetail";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="about" element={<About/>}/>
           <Route path="tours" element={<TourList/>}/>
           <Route path="tours/:id" element={<TourDetail/>}/>
-          {/* <Route path="login" element={<Login/>}/> */}
+          <Route path="login" element={<Login/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

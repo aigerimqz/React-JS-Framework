@@ -14,7 +14,7 @@ export default function TourItem({tour}){
           <h2 className="tour-title">{tour.title}</h2>
           <p className="tour-country">{tour.brand}</p>
           <p className="tour-description">{tour.description}</p>
-          <p className="tour-price">{tour.price.toLocaleString()} ₸</p>
+          <p className="tour-price">{tour.price.toLocaleString()} $</p>
         </div>
       </div>
     </Link>
