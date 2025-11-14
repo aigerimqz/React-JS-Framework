@@ -15,7 +15,7 @@
 }
 
 
-.loadBtn{
+.load__btn{
     padding: 20px 30px;
     border-radius: 30px;
     border:none;
@@ -25,7 +25,7 @@
     background-color: rgb(162, 224, 206);
     transition: transform ease-in-out 0.3s;
 }
-.loadBtn:hover{
+.load__btn:hover{
     transform: scale(1.1);
     cursor: pointer;
 }

@@ -1,11 +1,25 @@
 import { useState } from "react";
-import About from "./components/AboutUs/About";
-import Home from "./components/Home/Home";
-import TourList from "./components/Tours/TourList";
+import About from "./pages/AboutUs/About";
+import Home from "./pages/Home/Home";
+import TourList from "./pages/Tours/TourList";
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import RootLayout from "./layouts/RootLayout";
 
 function App() {
   return (
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<RootLayout/>}>
+    //       <Route index element = {<Home/>}/>
+    //       <Route path="about" element={<About/>}/>
+    //       <Route path="tours" element={<TourList/>}/>
+    //       <Route path="login" element={<Login/>}/>
+    //     </Route>
+    //   </Routes>
+    // </BrowserRouter>
+
+
     <>
       <div className="section">
         <div className="container">
