@@ -7,7 +7,7 @@ export default function TourItem({tour}){
   return (
     <div className="tour-card">
         
-      <img src={tour.thumbnail} alt={tour.name} className="tour-image" />
+      <img src={tour.thumbnail} alt={tour.title} className="tour-image" />
       <div className="tour-content">
         <h2 className="tour-title">{tour.title}</h2>
         <p className="tour-country">{tour.brand}</p>

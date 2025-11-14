@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import TourItem from "./TourItem";
 import "./TourList.css";
 import { searchItems } from "../../services/itemService";
@@ -8,6 +9,9 @@ export default function TourList() {
     const q = params.get("q") || "";
     const [filterQuery, setFilterQuery] = useState("");
     const [loading, setLoading] = useState(false);
+
+
+
     async function load(query = "") {
         setLoading(true);
         let data;
@@ -28,6 +32,11 @@ export default function TourList() {
         load(q);
     }, [q]);
 
+    function handleSearch(e) {
+      const value = e.target.value;
+      setFilterQuery(value);
+      setParams({q: value});
+    }
     // useEffect(() => {
     //     const delayDebounce = setTimeout(() => {
     //         load(filterQuery);
@@ -45,8 +54,8 @@ export default function TourList() {
                 <input type="text" className="search__input" 
                 placeholder="Search tours..."
                 value={filterQuery}
-                onChange={(e) => setFilterQuery(e.target.value)} />
-                <button className="clear__btn" onClick={() => setFilterQuery("")}>Clear</button>
+                onChange={handleSearch} />
+                <button className="clear__btn" onClick={() => handleSearch({target: {value: ""}})}>Clear</button>
             </div>
             {loading ? (
                 <p className="loading">Loading tours...</p>
