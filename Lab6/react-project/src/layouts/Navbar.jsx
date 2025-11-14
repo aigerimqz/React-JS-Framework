@@ -11,14 +11,17 @@ export default function Navbar() {
           <Link className="nav__item" to="/tours">Tours</Link>
         </div>
         <div className="login__bar">
-         <Link to="/login"> <button className="login__btn">Login</button></Link>
+         <Link className="login__link" to="/login"> <button className="login__btn">Login</button></Link>
         </div>
 
         
       </nav>
 
       <main>
-        <Outlet />
+        <div className="container">
+          <Outlet />
+        </div>
+        
       </main>
     </div>
   );
