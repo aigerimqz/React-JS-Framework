@@ -1,0 +1,33 @@
+.nav__bar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px 100px;
+    font-size: 16px;
+    font-size: 21px;
+    
+}
+
+.nav__list{
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+.nav__item{
+    padding: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.login__btn{
+    padding: 10px 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    text-decoration: none;
+    border: none;
+    background-color: rgb(162, 224, 206);
+    border-radius: 30px;
+}

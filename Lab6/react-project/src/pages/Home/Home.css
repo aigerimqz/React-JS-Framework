@@ -1,10 +1,17 @@
 
 .home__section{
-    margin: 150px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    background-image: url("ocean.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5); 
+    background-blend-mode: multiply; 
+    min-height: 100vh;
     
 }
 

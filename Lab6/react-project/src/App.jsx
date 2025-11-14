@@ -4,14 +4,14 @@ import Home from "./pages/Home/Home";
 import TourList from "./pages/Tours/TourList";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RootLayout from "./layouts/RootLayout";
+import Navbar from "./layouts/Navbar";
 import TourDetail from "./pages/Tours/TourDetail";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<RootLayout/>}>
+        <Route path="/" element={<Navbar/>}>
           <Route index element = {<Home/>}/>
           <Route path="about" element={<About/>}/>
           <Route path="tours" element={<TourList/>}/>
