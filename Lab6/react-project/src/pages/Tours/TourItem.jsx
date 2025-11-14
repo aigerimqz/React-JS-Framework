@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function TourItem({tour}){
   return (
-    <Link to={`/tours/${tour.id}`}>
+    <Link to={`/tours/${tour.id}`} className="tour__detail">
       <div className="tour-card">
           
         <img src={tour.thumbnail} alt={tour.title} className="tour-image" />
