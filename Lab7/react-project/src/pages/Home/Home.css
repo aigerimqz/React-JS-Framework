@@ -1,0 +1,67 @@
+
+.home__section{
+    margin: 0 auto;
+    /* margin-bottom: 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: white;
+    background-image: url("ocean.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5); 
+    background-blend-mode: multiply; 
+    min-height: 100vh;
+    border-radius: 40px;
+    
+}
+
+.home__title{
+    font-size: 56px;
+    text-align: center;
+    /* font-weight: 400; */
+    
+}
+
+.home__text{
+    font-size: 16px;
+    
+    text-align: justify;
+    font-weight: 200;
+}
+.home__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+    width: 70%;
+}
+.home__info button{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 10px;
+    margin-top: 20px;
+    width: 200px;
+    border-radius: 16px;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform ease-in-out 0.3s;
+}
+.home__info button:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.home__link{
+    text-decoration: none;
+    color: white;
+}
