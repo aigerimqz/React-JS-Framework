@@ -6,7 +6,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./layouts/Navbar";
 import TourDetail from "./pages/Tours/TourDetail";
-import Login from "./pages/Login/Login";
+import Login from "./pages/Auth/Login";
 
 function App() {
   return (
