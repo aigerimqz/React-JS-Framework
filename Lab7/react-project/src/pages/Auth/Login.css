@@ -16,3 +16,6 @@
     margin: 10px 0;
     font-family: 'Montserrat', sans-serif;
 }
+.error{
+    color: red;
+}
