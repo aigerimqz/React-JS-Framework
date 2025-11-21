@@ -8,11 +8,12 @@ export default function Profile() {
 
   return (
     <div className="profile__block">
-      <h1>Profile</h1>
-      <p>Email: {user.email}</p>
-      <p>UID: {user.uid}</p>
+      <h1 className="profile__title">Profile</h1>
+      <img src="https://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" className="profile__ava" alt="" />
+      <p className="profile__email">{user.email}</p>
+      <p className="profile__id">{user.uid}</p>
 
-      <button onClick={logout}>Logout</button>
+      <button className="login__btn" onClick={logout}>Logout</button>
     </div>
   );
 }
