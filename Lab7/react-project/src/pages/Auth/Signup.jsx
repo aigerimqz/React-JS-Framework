@@ -1,38 +1,68 @@
 import { useState } from "react";
-// import { createUserWithEmailAndPassword } from "./firebase/auth";
-
 import { useNavigate, Link } from "react-router-dom";
+import "./Login.css"; // можно использовать тот же CSS, что для Login
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-import "./Login.css";
+
 export default function Signup() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
-  const handleSignup = async () => {
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/profile");
-    } catch (err) {
-      setError(err.message);
-    }
-  };
+    const navigate = useNavigate();
 
-  return (
-    <div className="signup__block">
-      <h1>Signup</h1>
+    const handleSignup = async () => {
+        try {
+            setError("");
+            setLoading(true);
+            await createUserWithEmailAndPassword(auth, email, password);
+            navigate("/profile");
+        } catch (err) {
+            setError(err.message);
+        }
+        setLoading(false);
+    };
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    return (
+        <>
+            <h1 style={{ textAlign: "center" }}>Sign Up</h1>
 
-      <input className="input input__email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-      <input className="input input__password" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-      <input className="input input__confirm" type="password" placeholder="Confirm a password" onChange={(e) => setError(e.target.value.includes())}/>
+            <form className="login__block">
+                {error && <p className="error">{error}</p>}
 
-      <button onClick={handleSignup}>Signup</button>
+                <input 
+                    className="input input__email"
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
 
-      <p>Have an account? <Link to="/login">Login</Link></p>
-    </div>
-  );
+                <input 
+                    className="input input__password"
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+
+                <button
+                    type="button"
+                    className="login__btn"
+                    disabled={loading}
+                    onClick={handleSignup}
+                >
+                    {loading ? "Loading..." : "Sign Up"}
+                </button>
+
+                <p>
+                    Already have an account?{" "}
+                    <Link to="/login">Login</Link>
+                </p>
+            </form>
+        </>
+    );
 }
