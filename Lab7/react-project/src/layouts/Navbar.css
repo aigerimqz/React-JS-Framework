@@ -49,3 +49,6 @@
     max-width: 1350px;
     margin: 20px auto;
 }
+.bar__title:hover{
+    text-decoration: none;
+}

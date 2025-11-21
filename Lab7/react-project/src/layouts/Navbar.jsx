@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <div>
       <nav className="nav__bar">
-        <h1 className="bar__title">Saiahat</h1>
+        <Link className="bar__title" to="/"><h1 className="bar__title">Saiahat</h1></Link>
 
         <div className="nav__list">
           <Link className="nav__item" to="/">Home</Link>
