@@ -5,7 +5,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
 export default function Navbar() {
-  const { user } = useAuth(); // получаем текущего пользователя
+  const { user } = useAuth();
 
   const handleLogout = async () => {
     await signOut(auth);
@@ -16,14 +16,12 @@ export default function Navbar() {
       <nav className="nav__bar">
         <h1 className="bar__title">Saiahat</h1>
 
-        {/* Left menu */}
         <div className="nav__list">
           <Link className="nav__item" to="/">Home</Link>
           <Link className="nav__item" to="/about">About Us</Link>
           <Link className="nav__item" to="/tours">Tours</Link>
         </div>
 
-        {/* Right menu (auth buttons) */}
         <div className="login__bar">
           {!user && (
             <>

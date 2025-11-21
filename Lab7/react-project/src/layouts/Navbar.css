@@ -25,6 +25,7 @@
 
 .login__btn{
     padding: 10px 30px;
+    margin:0 10px;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 21px;
