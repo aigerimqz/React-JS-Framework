@@ -4,6 +4,10 @@ import TourItem from "./TourItem";
 import "./TourList.css";
 import { searchItems } from "../../services/itemService";
 export default function TourList() {
+    const dispatch = useDispatch();
+    const {list, loadingList, errorList} = useSelector(
+        (state) => state.items
+    );
     const [items, setItems] = useState([]);
     const [params, setParams] = useSearchParams();
     const q = params.get("q") || "";
