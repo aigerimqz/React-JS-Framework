@@ -5,16 +5,27 @@ import "../Tours/TourDetail.css";
 export default function TourDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [tour, setTour] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  // const [tour, setTour] = useState(null);
+  // const [loading, setLoading] = useState(true);
+
+  const {tour, loadingItem, errorItem} = useSelector(
+    (state) => state.items
+  );
+
+  // useEffect(() => {
+  //   getItemById(id)
+  //     .then(data => setTour(data))
+  //     .finally(() => setLoading(false));
+  // }, [id]);
 
   useEffect(() => {
-    getItemById(id)
-      .then(data => setTour(data))
-      .finally(() => setLoading(false));
-  }, [id]);
+    dispatch(fetchItemId(id));
+  }, [id, dispatch]);
 
-  if (loading) return <p>Loading...</p>;
+
+  if (loadingItem) return <p>Loading...</p>;
+  if (errorItem) return <p>Error: {errorItem}</p>
   if (!tour) return <p>Tour not found</p>;
 
   return (
