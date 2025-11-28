@@ -3,38 +3,39 @@ import { useSearchParams } from "react-router-dom";
 import TourItem from "./TourItem";
 import "./TourList.css";
 import { searchItems } from "../../services/itemService";
+import { fetchItems } from "../../features/items/itemsSlice";
 export default function TourList() {
     const dispatch = useDispatch();
     const {list, loadingList, errorList} = useSelector(
         (state) => state.items
     );
-    const [items, setItems] = useState([]);
+    // const [items, setItems] = useState([]);
     const [params, setParams] = useSearchParams();
     const q = params.get("q") || "";
     const [filterQuery, setFilterQuery] = useState("");
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
 
 
-    async function load(query = "") {
-        setLoading(true);
-        let data;
+    // async function load(query = "") {
+    //     setLoading(true);
+    //     let data;
 
-        if (query) {
-          data = await searchItems(query);
-        }else{
-          const res = await fetch("https://dummyjson.com/products");
-          data = await res.json();
-        }
+    //     if (query) {
+    //       data = await searchItems(query);
+    //     }else{
+    //       const res = await fetch("https://dummyjson.com/products");
+    //       data = await res.json();
+    //     }
 
         
-        setItems(data.products || []);
-        setLoading(false);
-    }
+    //     setItems(data.products || []);
+    //     setLoading(false);
+    // }
 
     useEffect(() => {
-        load(q);
-    }, [q]);
+        dispatch(fetchItems(q));
+    }, [q, dispatch]);
 
     function handleSearch(e) {
       const value = e.target.value;
@@ -53,7 +54,7 @@ export default function TourList() {
     return (
         <div className="tour__list">
             <h2 className="list__title">Tours</h2>
-            <button className="load__btn" onClick={load}>Reload tours</button>
+            {/* <button className="load__btn" onClick={load}>Reload tours</button> */}
             <div className="search__bar">
                 <input type="text" className="search__input" 
                 placeholder="Search tours..."
