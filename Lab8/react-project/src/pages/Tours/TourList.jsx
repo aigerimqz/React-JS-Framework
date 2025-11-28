@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import TourItem from "./TourItem";
 import "./TourList.css";
 import { fetchItems } from "../../features/items/itemsSlice";
+import Loader from "../../components/Loader";
+import ErrorBox from "../../components/ErrorBox";
 
 export default function TourList() {
     const dispatch = useDispatch();
@@ -45,9 +47,9 @@ export default function TourList() {
             </div>
 
             {loadingList ? (
-                <p className="loading">Loading tours...</p>
+                <Loader/>
             ) : errorList ? (
-                <p className="error">{errorList}</p>
+                <ErrorBox message={errorList}/>
             ) : list.length ? (
                 <ul className="tour__items">
                     {list.map((item) => (

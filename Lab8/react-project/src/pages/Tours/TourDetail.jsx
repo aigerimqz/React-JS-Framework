@@ -4,6 +4,7 @@ import { getItemById } from "../../services/itemService";
 import "../Tours/TourDetail.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchItemById } from "../../features/items/itemsSlice";
+import Loader from "../../components/Loader";
 export default function TourDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ export default function TourDetail() {
   }, [id, dispatch]);
 
 
-  if (loadingItem) return <p>Loading...</p>;
+  if (loadingItem) return <Loader/>;
   if (errorItem) return <p>Error: {errorItem}</p>
   if (!selectedItem) return <p>Tour not found</p>;
 
