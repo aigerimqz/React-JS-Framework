@@ -27,38 +27,42 @@ export default function Login() {
 
     return (
         <>
-            <h1 style={{ textAlign: "center" }}>Login</h1>
+            <div className="login__container">
 
-            <form className="login__block" onSubmit={handleLogin}>
-                {error && <p className="error">{error}</p>}
+            
+                <h1 style={{ textAlign: "center" }}>Login</h1>
 
-                <input 
-                    className="input input__email"
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
+                <form className="login__block" onSubmit={handleLogin}>
+                    {error && <p className="error">{error}</p>}
 
-                <input 
-                    className="input input__password"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
+                    <input 
+                        className="input input__email"
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
 
-                <button className="login__btn" disabled={loading}>
-                    {loading ? "Loading..." : "Login"}
-                </button>
+                    <input 
+                        className="input input__password"
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
 
-                <p>
-                    Don't have an account?{" "}
-                    <Link to="/signup">Sign up</Link>
-                </p>
-            </form>
+                    <button className="login__btn" disabled={loading}>
+                        {loading ? "Loading..." : "Login"}
+                    </button>
+
+                    <p>
+                        Don't have an account?{" "}
+                        <Link to="/signup">Sign up</Link>
+                    </p>
+                </form>
+            </div>
         </>
     );
 }

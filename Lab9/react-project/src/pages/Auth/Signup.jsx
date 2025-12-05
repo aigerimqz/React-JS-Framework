@@ -31,51 +31,55 @@ export default function Signup() {
 
     return (
         <>
-            <h1 style={{ textAlign: "center" }}>Sign Up</h1>
+            <div className="login__container">
 
-            <form className="login__block">
-                
+  
+                <h1 style={{ textAlign: "center" }}>Sign Up</h1>
 
-                <input 
-                    className="input input__email"
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
+                <form className="login__block">
+                    
 
-                <input 
-                    className="input input__password"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <input 
-                    className="input input__password"
-                    type="password"
-                    placeholder="Confirm Password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                />
-                {error && <p className="error">{error}</p>}
-                <button
-                    type="button"
-                    className="login__btn"
-                    disabled={loading}
-                    onClick={handleSignup}
-                >
-                    {loading ? "Loading..." : "Sign Up"}
-                </button>
+                    <input 
+                        className="input input__email"
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
 
-                <p>
-                    Already have an account?{" "}
-                    <Link to="/login">Login</Link>
-                </p>
-            </form>
+                    <input 
+                        className="input input__password"
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <input 
+                        className="input input__password"
+                        type="password"
+                        placeholder="Confirm Password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        required
+                    />
+                    {error && <p className="error">{error}</p>}
+                    <button
+                        type="button"
+                        className="login__btn"
+                        disabled={loading}
+                        onClick={handleSignup}
+                    >
+                        {loading ? "Loading..." : "Sign Up"}
+                    </button>
+
+                    <p>
+                        Already have an account?{" "}
+                        <Link to="/login">Login</Link>
+                    </p>
+                </form>
+            </div>
         </>
     );
 }
