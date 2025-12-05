@@ -1,6 +1,6 @@
 {
-  "name": "My React App",
-  "short_name": "ReactApp",
+  "name": "Saiahat Travel App",
+  "short_name": "Saiahat",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
