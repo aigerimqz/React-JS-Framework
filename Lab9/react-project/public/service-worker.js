@@ -4,7 +4,7 @@ const API_CACHE = "api-cache-v1";
 
 const APP_SHELL = [
     "/",
-    "../index.html",
+    "/index.html",
     "/manifest.json",
     "/icons/icon-192.png",
     "/icons/icon-512.png",
@@ -66,7 +66,7 @@ self.addEventListener("fetch", (event) => {
 
     if(req.mode === "navigate"){
         event.respondWith(
-            fetch(req).catch(() => caches.match("../index.html"))
+            fetch(req).catch(() => caches.match("/index.html"))
         );
         return;
     }
