@@ -58,3 +58,30 @@ async function networkFirst(request) {
     return cache.match(request);
   }
 }
+
+
+
+self.addEventListener("fetch", (event) => {
+    const req = event.request;
+
+    if(req.mode === "navigate"){
+        event.respondWith(
+            fetch(req).catch(() => caches.match("../index.html"))
+        );
+        return;
+    }
+
+    const url = new URL(req.url);
+
+    if(url.pathname.startsWith("/icons") || url.pathname.endsWith(".css") || url.pathname.endsWith(".js")){
+        event.respondWith(cacheFirst(req));
+        return;
+    }
+
+    if(url.pathname.startsWith("/api")){
+        event.respondWith(networkFirst(req));
+        return;
+    }
+
+    event.respondWith(networkFirst(req))
+})
